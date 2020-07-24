@@ -22,6 +22,7 @@ pipeline {
                 git init
                 git config --global user.name "admin"
                 git status
+                git remote remove origin
                 git remote add origin http://admin:admin123@34.242.48.107:7990/scm/or/ecom-ux.git
                 git pull origin master --allow-unrelated-histories
                 git add -f *.jar
