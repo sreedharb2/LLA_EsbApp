@@ -23,11 +23,10 @@ pipeline {
                 git config --global user.name "admin"
                 git status
                 git remote --verbose
-                git remote set-url origin http://admin:admin123@34.242.48.107:7990/scm/or/ecom-ux.git
+                git remote add origin http://admin:admin123@34.242.48.107:7990/scm/or/ecom-ux.git
                 git remote --verbose
                 git pull origin master --allow-unrelated-histories
                 git add -f *.jar
-                git stash
                 git pull origin master --allow-unrelated-histories
                 git status
                 git commit -a -m "push into bitbucket"
