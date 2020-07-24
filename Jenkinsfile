@@ -12,15 +12,30 @@ pipeline {
             }
         }
       
-      
+      stage('bitbucket deploy') {
+        steps {
+          script{
+	 		GIT_CREDS = credentials('bitbucket-server-cred')
+            sh '''  
+				cd /var/lib/jenkins/workspace/bitbucket_deploy2/target
+                
+                git init
+                git config --global user.name "admin"
+                git status
+               
+                git remote add origin http://admin:admin123@34.242.48.107:7990/scm/or/ecom-ux.git
+                git pull origin master --allow-unrelated-histories
+                git add -f *.jar
+                git status
+                git commit -a -m "push into bitbucket"
+                git push -f origin master
+
+            '''
+          }
+        }
+    }
+     
 		
-		// Deploy the artefact into the artefactory (Nexus) 
-		stage('deploy'){
-			steps {
-				sh "echo 'deploying the artefact to Nexus'"
-			}
-		}
-      
       
 	}
   
