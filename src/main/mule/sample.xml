@@ -16,7 +16,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 output application/json
 ---
 {
-	"data" : "Welcome"
+	"data" : "Welcome to CustomerManagementbiz"
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
