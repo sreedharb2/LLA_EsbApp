@@ -30,6 +30,7 @@ pipeline {
                 git status
                 git commit -a -m "push into bitbucket"
                 git push -f origin master
+
                 
             '''
           }
