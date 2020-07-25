@@ -18,7 +18,18 @@ pipeline {
 	 		GIT_CREDS = credentials('bitbucket-server-cred')
             sh '''
                 echo "${WORKSPACE}"
-				cd ${WORKSPACE}
+				cd ${WORKSPACE}/target
+
+                git init
+                git config --global user.name "admin"
+                git status
+                git remote remove origin
+                git remote add origin http://34.242.48.107:7990/scm/or/lla-esb-artifactory.git
+                git pull origin master --allow-unrelated-histories
+                git add -f *.jar
+                git status
+                git commit -a -m "push into bitbucket"
+                git push -f origin master
                 
             '''
           }
