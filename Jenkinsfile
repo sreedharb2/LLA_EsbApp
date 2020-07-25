@@ -24,7 +24,7 @@ pipeline {
                 git config --global user.name "Administrator"
                 git config --global user.email "nowsudheer@gmail.com"
                 git status
-                git remote add origin http://3admin:admin123@4.242.48.107:7990/scm/or/lla-esb-artifactory.git
+                git remote add origin http://admin:admin123@4.242.48.107:7990/scm/or/lla-esb-artifactory.git
                 git pull origin master --allow-unrelated-histories
                 git add -f *.jar
                 git status
