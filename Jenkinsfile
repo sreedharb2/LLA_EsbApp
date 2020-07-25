@@ -19,6 +19,7 @@ pipeline {
             sh '''
                 echo "${WORKSPACE}"
 				cd ${WORKSPACE}/target
+				
 
                 git init
                 git config --global user.name "Administrator"
