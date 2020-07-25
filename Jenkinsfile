@@ -12,24 +12,14 @@ pipeline {
             }
         }
       
-      stage('bitbucket deploy') {
+      stage('bitbucket deploy2') {
         steps {
           script{
 	 		GIT_CREDS = credentials('bitbucket-server-cred')
-            sh '''  
-				cd /var/lib/jenkins/workspace/bitbucket_deploy2/target
+            sh '''
+                echo "${WORKSPACE}"
+				cd ${WORKSPACE}
                 
-                git init
-                git config --global user.name "admin"
-                git status
-                git remote remove origin
-                git remote add origin http://admin:admin123@34.242.48.107:7990/scm/or/ecom-ux.git
-                git pull origin master --allow-unrelated-histories
-                git add -f *.jar
-                git status
-                git commit -a -m "push into bitbucket"
-                git push -f origin master
-
             '''
           }
         }
