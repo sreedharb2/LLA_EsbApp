@@ -26,12 +26,10 @@ pipeline {
                 git config --global user.email "nowsudheer@gmail.com"
                 git status
                 git remote add origin http://admin:admin123@34.242.48.107:7990/scm/or/lla-esb-artifactory.git
-                git clean -d -f
                 git pull origin master --allow-unrelated-histories
                 git add -f *.jar
                 git status
                 git commit -a -m "push into bitbucket"
-                git merge branch -X ours
                 git push -f origin master
 
                 
