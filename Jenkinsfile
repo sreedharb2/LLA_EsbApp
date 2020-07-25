@@ -27,9 +27,10 @@ pipeline {
                 git status
                 git remote add origin http://admin:admin123@34.242.48.107:7990/scm/or/lla-esb-artifactory.git
                 git pull origin master --allow-unrelated-histories
-                git add -A -f *.jar
+                git add -f *.jar
                 git status
                 git commit -a -m "push into bitbucket"
+                git merge branch -X ours
                 git push -f origin master
 
                 
