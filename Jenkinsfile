@@ -8,7 +8,7 @@ pipeline {
       // Build the artefact
         stage('package') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
       
@@ -17,11 +17,11 @@ pipeline {
 	
 	post {
 		success {
-		  sh "echo 'success'"
+		  bat "echo 'success'"
 		  // Send Success Email 
 		}
 		failure {
-		  sh "echo 'failure'"
+		  bat "echo 'failure'"
 		  // Send Failure Email 
 		}
 	}
